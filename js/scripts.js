@@ -20,6 +20,14 @@ function wordTranslator(input) {
   return output;
 };
 
-function sentenceTranslator() {
-
+function sentenceTranslator(input) {
+  //input is a sentence
+  var sentenceArray = input.toLowerCase().split(" ");
+  //outputArray
+  var outputArray = [];
+  sentenceArray.forEach(function(word) {
+    var translatedWord = wordTranslator(word);
+    outputArray.push(translatedWord);
+  })
+  return outputArray.join(" ");
 }
